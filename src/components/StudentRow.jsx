@@ -3,6 +3,13 @@ function StudentRow({ id, name, grade, onDelete }) {
     <li className="flex items-center gap-3 border-b border-stone-200 px-5 py-3">
       <span className="flex-1">{name}</span>
       <b className="text-lg">{grade}</b>
+
+      {grade < 75 && (
+        <span className="rounded-full bg-red-100 px-2 py-1 text-xs font-medium text-red-700">
+          Needs review
+        </span>
+      )}
+
       <button
         type="button"
         onClick={() => onDelete(id)}
